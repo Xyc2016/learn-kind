@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
         - name: webapp
-          image: 986327386/demo-app
+          image: 986327386/demo-app:debcf0f0d9f07d3b486f93aa4088a4ecc8812a95
           imagePullPolicy: Always
           resources:
             limits:
@@ -44,7 +44,7 @@ kind: Service
 metadata:
   name: webapp-service
 spec:
-  type: NodePort
+  type: LoadBalancer
   selector:
     app: webapp
   ports:
